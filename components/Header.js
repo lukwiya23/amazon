@@ -1,5 +1,6 @@
 import Image from "next/image";
 import {signIn, signOut, useSession} from 'next-auth/client'
+import {useRouter} from 'next/router'
 import {
   MenuIcon,
   SearchIcon,
@@ -9,6 +10,7 @@ import {
 function Header() {
 
   const [session] = useSession();
+  const router = useRouter()
 
   return (
     <header>
@@ -16,6 +18,7 @@ function Header() {
         {/* LOGO */}
         <div className="mt-2 flex items-center flex-grow sm:flex-grow-0">
           <Image
+          onClick={()=>router.push('/')}
             className="cursor-pointer"
             src="https://links.papareact.com/f90"
             width={150}
@@ -43,7 +46,7 @@ function Header() {
             <p className="font-extrabold md:text-sm">Returns &</p>
             <p className="font-extrabold md:text-sm">Orders</p>
           </div>
-          <div className="link flex items-center relative  ">
+          <div className="link flex items-center relative  " onClick={()=>router.push('/checkout')}>
             <span className="absolute top-0 right-0 md:top-0 md:right-10 bg-yellow-500 h-4 w-4 text-center rounded-full text-black font-bold">
               0
             </span>
