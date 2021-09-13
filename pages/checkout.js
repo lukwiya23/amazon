@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { selectItems } from "../slice/basketSlice";
 import CheckoutProduct from "../components/CheckoutProduct";
 import { useSession} from 'next-auth/client'
+import Currency from "react-currency-formatter";
 
 function Checkout() {
     const items = useSelector(selectItems)
@@ -11,7 +12,7 @@ function Checkout() {
   return (
     <div className="bg-gray-100">
       <Header />
-      <main className="lg:flex max-w-screen-2xl mx-auto items-center">
+      <main className="lg:flex max-w-screen-2xl mx-auto ">
         {/*     left div */}
         <div className="flex-grow m-5 shadow-sm">
           <Image
@@ -44,7 +45,19 @@ function Checkout() {
         </div>
 
         {/* RIGHT DIV */}
-        <div></div>
+        <div className="flex flex-col bg-white p-10 shadow-md">
+            {items.length > 0 && (
+                <>
+                <h2 className="whitespace-nowrap">
+                    Subtotal ({items.length} items):
+                    <span className="font-bold">
+                     {/* <Currency quantity={total} currency="UGX"  />0 */}
+                     </span>
+                    </h2>
+                    <button className="button mt-2 ">{!session ? 'Login to Checkout':'Proceed To Checkout'}</button>
+                    </>
+            )}
+        </div>
       </main>
     </div>
   );

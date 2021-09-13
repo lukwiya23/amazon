@@ -52,7 +52,7 @@ const removeItemFromBasket = ()=>{
             {/* right button */}
             <div className="flex flex-col space-y-2 my-auto justify-self-end">
             <button className="button " onClick={addItemToBasket}>Add</button>
-            <button className="button" onClick={removeItemFromBasket}>Remove</button>
+            <button className="button remove" onClick={removeItemFromBasket}>Remove</button>
             </div>
         </div>
     )
