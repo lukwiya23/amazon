@@ -42,8 +42,8 @@ function Header() {
         {/* right div */}
         <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
           <div className="link " onClick={!session?signIn:signOut}>
-            <p>{session ? `Hello, ${session.user.name}`:'Login'}</p>
-            <p className="font-extrabold md:text-sm">Accounts & Lists</p>
+            <p className="font-extrabold md:text-sm"> {session ? `Hello, ${session.user.name}`:'Login or SignUp'}</p>
+            {/* <p className="font-extrabold md:text-sm">Accounts & Lists</p> */}
           </div>
           <div className="link ">
             <p className="font-extrabold md:text-sm">Returns &</p>
