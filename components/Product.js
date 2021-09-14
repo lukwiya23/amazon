@@ -26,7 +26,7 @@ function Product({ id, title, price, description, category, image }) {
   const [hasPrime] = useState(Math.random() < 0.5);
 
   return (
-    <div className="relative flex flex-col border m-5 bg-white z-10 p-10 rounded-lg hover:shadow-xl shadow-md transition-all duration-200 ">
+    <div className="relative flex flex-col border m-5 bg-white z-10 p-10 rounded-lg hover:shadow-xl shadow-md transition-all duration-200 hover:scale-95 ease-out">
       <p className="absolute top-2 right-5 text-cs italic text-gray-400">
         {category}
       </p>
