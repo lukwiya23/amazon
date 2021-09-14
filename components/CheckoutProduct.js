@@ -24,7 +24,7 @@ const removeItemFromBasket = ()=>{
 
 
     return (
-        <div className="grid grid-cols-5 shadow-md hover:shadow-xl ease-out duration-200 border-2 p-5">
+        <div className="grid grid-cols-5 shadow-md hover:shadow-xl ease-out duration-200 border-2 p-5 hover:scale-95">
             <Image src={image} height={200} width={200} objectFit="contain"/>
 
             {/* middle div */}
